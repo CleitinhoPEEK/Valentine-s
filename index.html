@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>valentine's day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 class="visually-hidden">Declaração de Dia dos Namorados</h1>
+  <canvas id="sky-canvas" aria-hidden="true"></canvas>
+  <div id="intro-flow" class="intro-flow" aria-hidden="false">
+    <div
+      id="intro-screen-click"
+      class="intro-screen intro-screen--active"
+      role="button"
+      tabindex="0"
+      aria-label="Abrir a experiência romântica"
+    >
+      <canvas id="intro-glass-canvas" class="intro-glass-canvas" aria-hidden="true"></canvas>
+      <div id="intro-fractures" class="intro-fractures" aria-hidden="true"></div>
+      <div class="intro-copy">
+        <p class="intro-kicker">Uma surpresa para você</p>
+        <p id="intro-title" class="intro-title">Clique</p>
+      </div>
+    </div>
+
+    <div
+      id="intro-screen-left"
+      class="intro-screen intro-screen--swipe is-hidden"
+      role="group"
+      aria-hidden="true"
+      aria-label="Segunda tela: arraste para esquerda"
+    >
+      <div class="intro-copy intro-copy--compact">
+        <p class="intro-title">Arraste pra esquerda</p>
+        <p class="intro-warning">Os desenvolvedores (eu) recomendam uso de fones de ouvido</p>
+      </div>
+      <div id="intro-swipe-left-gate" class="intro-swipe-gate intro-swipe-gate--open" aria-hidden="false">
+        <div id="intro-swipe-left-track" class="intro-swipe-track">
+          <button
+            id="intro-swipe-left-handle"
+            class="intro-swipe-handle"
+            type="button"
+            aria-label="Arraste pra esquerda para continuar"
+            tabindex="0"
+          >
+            <span class="intro-swipe-handle-arrow" aria-hidden="true">←</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="intro-screen-up"
+      class="intro-screen intro-screen--swipe is-hidden"
+      role="group"
+      aria-hidden="true"
+      aria-label="Terceira tela: deslize para cima"
+    >
+      <div class="intro-copy intro-copy--compact intro-copy--plain">
+        <p class="intro-title">Deslize pra cima</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="layout-shell" class="layout-shell">
+    <main id="main-wrapper" class="wrapper">
+      <div id="message" class="message" aria-label="Mensagem de Dia dos Namorados"></div>
+      <section id="player-view" class="player-view" aria-label="Player de músicas"></section>
+    </main>
+
+    <div id="external-controls" class="external-controls">
+      <div id="text-mini-player" class="text-mini-player" role="group" aria-label="Barra de reprodução">
+        <button id="text-mini-open" class="text-mini-open" type="button" aria-label="Abrir player">
+          <div class="text-mini-progress-row" aria-hidden="true">
+            <span id="text-mini-current" class="text-mini-time">0:00</span>
+            <span class="text-mini-track"><span id="text-mini-track-fill" class="text-mini-track-fill"></span></span>
+            <span id="text-mini-duration" class="text-mini-time">0:00</span>
+          </div>
+          <div class="text-mini-title-row">
+            <span class="text-mini-icon" aria-hidden="true">&#9835;</span>
+            <span id="text-mini-title" class="text-mini-title">Nenhuma música tocando</span>
+          </div>
+        </button>
+        <div class="text-mini-actions">
+          <button id="text-mini-toggle-play" class="text-mini-action-btn" type="button" aria-label="Tocar" title="Tocar" disabled>▶</button>
+          <button id="text-mini-toggle-volume" class="text-mini-action-btn" type="button" aria-label="Volume" title="Volume">🔊</button>
+        </div>
+      </div>
+
+      <button id="mode-toggle" class="mode-toggle" type="button" aria-pressed="false">
+        <span class="mode-toggle-arrow" aria-hidden="true">➜</span>
+        <span id="mode-toggle-label">Abrir player</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
